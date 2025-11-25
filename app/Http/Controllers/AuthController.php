@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\RegisterRquest;
+use Illuminate\Http\JsonResponse;
+use App\Http\Requests\RegisterRequest;
 use App\Services\Interfaces\AuthInterfaceService;
 
 class AuthController extends Controller
 {
     public function __construct(
-        protected AuthInterfaceService $authSevice
+        protected AuthInterfaceService $authService
     ) {}
 
     public function viewRegister()
@@ -22,9 +23,9 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function postRegister(RegisterRquest $request)
+    public function postRegister(RegisterRequest $request): JsonResponse
     {
-        $response  = $this->authSevice->register($request->validated());
+        $response  = $this->authService->register($request->validated());
         return response()->json($response);
     }
 }
