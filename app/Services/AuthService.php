@@ -9,12 +9,7 @@ use App\Services\Interfaces\AuthInterfaceService;
 
 class AuthService implements AuthInterfaceService
 {
-    protected $authRepository;
-
-    public function __construct(AuthInterfaceRepository $authRepository)
-    {
-        $this->authRepository = $authRepository;
-    }
+    public function __construct(protected AuthInterfaceRepository $authRepository) {}
 
     public function register(array $data): array
     {
