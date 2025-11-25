@@ -8,12 +8,9 @@ use App\Services\Interfaces\AuthInterfaceService;
 
 class AuthController extends Controller
 {
-    protected $authSevice;
-
-    public function __construct(AuthInterfaceService $authSevice)
-    {
-        $this->authSevice = $authSevice;
-    }
+    public function __construct(
+        protected AuthInterfaceService $authSevice
+    ) {}
 
     public function viewRegister()
     {
