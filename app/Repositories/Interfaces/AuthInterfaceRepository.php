@@ -2,9 +2,15 @@
 
 namespace App\Repositories\Interfaces;
 
-use App\Models\WebUserModel;
+use App\Models\WebUser;
 
 interface AuthInterfaceRepository
 {
-    public function register(array $data): WebUserModel;
+    public function register(array $data): WebUser;
+
+    public function rememberToken(array $data): ?WebUser;
+
+    public function rememberMe(array $data): ?WebUser;
+
+    public function logout(array $data);
 }
