@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('component');
-});
+Route::get('/', [AuthController::class, 'viewComponent'])->name('AuthController.viewComponent');
+
 Route::post('/', [AuthController::class, 'rememberMe']);
 
 

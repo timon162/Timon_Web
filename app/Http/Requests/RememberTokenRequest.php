@@ -22,7 +22,7 @@ class RememberTokenRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'remember_token' => 'required|string',
+            'remember_token' => 'nullable|string',
         ];
     }
 
