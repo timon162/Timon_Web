@@ -31,6 +31,11 @@ class AuthController extends Controller
         return view('user.user_view');
     }
 
+    public function viewComponent()
+    {
+        return view('component');
+    }
+
     public function postRegister(RegisterRequest $request): JsonResponse
     {
         $response  = $this->authService->register($request->validated());

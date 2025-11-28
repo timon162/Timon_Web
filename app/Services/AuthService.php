@@ -58,16 +58,22 @@ class AuthService implements AuthInterfaceService
 
     public function rememberMe(array $data): array
     {
-        $user = $this->authRepository->rememberMe($data);
-        if (!$user) {
+        if ($data['remember_token'] != null) {
+            $user = $this->authRepository->rememberMe($data);
+            if (!$user) {
+                return [
+                    'data' => null,
+                    'mess' => 'undefined'
+                ];
+            }
             return [
-                'data' => null,
-                'mess' => 'undefined'
+                'data' => $user,
+                'mess' => 'success'
             ];
         }
         return [
-            'data' => $user,
-            'mess' => 'success'
+            'data' => null,
+            'mess' => 'undefined'
         ];
     }
 
