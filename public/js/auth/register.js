@@ -21,13 +21,20 @@ $("#id-form-register").on("submit", function (e) {
         },
         data: $dataPost,
         success: function (res) {
-            alert(res.mess);
+            Swal.fire({
+                title: res.mess,
+                text: "Welcome to Timon_Web",
+                icon: "success",
+            });
         },
         error: function (error) {
             let errors = error.responseJSON.errors;
-
             for (let filed in errors) {
-                console.log(errors[filed][0]);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: errors[filed][0],
+                });
             }
         },
     });
