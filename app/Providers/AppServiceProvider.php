@@ -11,11 +11,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(
+        $this->app->singleton(
             \App\Services\Interfaces\AuthInterfaceService::class,
             \App\Services\AuthService::class,
         );
-        $this->app->bind(
+        $this->app->singleton(
             \App\Repositories\Interfaces\AuthInterfaceRepository::class,
             \App\Repositories\AuthRepository::class,
         );

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRquest extends FormRequest
+class RegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,7 @@ class RegisterRquest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:web_users,email',
             'password' => 'required|string|min:6|confirmed'
         ];
     }
@@ -35,6 +35,7 @@ class RegisterRquest extends FormRequest
             'name.string' => 'name user khong đúng định dạng',
             'name.min' => 'name user quá ngắn',
             'emil.required' => 'chưa nhập email',
+            'emil.unique' => 'email đã tồn tại',
             'password.required' => 'chưa nhập password',
             'password.string' => 'password không đúng định dạng',
             'password.min' => 'password quá ngắn',

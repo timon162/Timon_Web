@@ -18,7 +18,5 @@ class WebUser extends Authenticatable
         'password',
     ];
 
-    protected $guarded = ['id'];
-
     protected $hidden = ['password'];
 }
