@@ -11,9 +11,21 @@
 </head>
 
 <body>
-    <h1>WELCOME TO TIMON_WEB</h1>
+    <form id="id-form-product" action="/product" method="GET">
+        @foreach ($data as $item)
+            <div class="product-item" data-id="{{ $item->id }}">
+                <label id="id-name-product" class="name-product">{{ $item->name_product }}</label><br></br>
+                <label id="id-price-product" class="price-product">{{ $item->price }}</label><br></br>
+                <label id="id-quantity-product" class="quantity-product">{{ $item->quantity }}</label><br></br>
+                <button id="id-btn-buy" class="btn-buy">Buy</button><br></br>
+            </div>
+        @endforeach
+    </form>
+
     <button type="submit" class="btn btn-login text-white" id="id-Logout-btn">Logout</button>
 </body>
 <script src="{{ asset('js/auth/logout.js') }}"></script>
+
+<script src="{{ asset('js/product.js') }}"></script>
 
 </html>
