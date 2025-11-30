@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton(
             \App\Services\Interfaces\ProductInterfaceService::class,
-            \App\Services\ProductSevice::class,
+            \App\Services\ProductService::class,
         );
         $this->app->singleton(
             \App\Repositories\Interfaces\ProductInterfaceRepository::class,
