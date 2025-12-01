@@ -41,6 +41,7 @@ class AuthService implements AuthInterfaceService
         }
 
         $user = Auth::user();
+        session(['user' => $user]);
         $token = $user->createToken('token')->plainTextToken;
         $addToken = [
             'email' => $data['email'],

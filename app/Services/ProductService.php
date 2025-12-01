@@ -16,10 +16,16 @@ class ProductService implements ProductInterfaceService
 
     public function postProduct(array $data)
     {
-        $response = $this->productRepository->postProduct($data);
-
+        $dataProduct = $this->productRepository->postProduct($data);
+        if (!$dataProduct) {
+            return [
+                'mess' => 'lỗi thêm sp',
+                'dataProduct' => null,
+            ];
+        }
         return [
-            'data' => $response
+            'mess' => 'thêm sản phẩm thành công',
+            'dataProduct' => $dataProduct,
         ];
     }
 }

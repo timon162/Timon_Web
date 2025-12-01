@@ -10,18 +10,20 @@ class ProductRepository implements ProductInterfaceRepository
 {
     public function getProduct()
     {
-        $products = DB::table('Products')->get();
+        $products = DB::table('products')->get();
         return $products;
     }
 
     public function postProduct(array $data)
     {
-        $products = DB::table('Products')
-            ->where('id', $data['id'])
-            ->where('quantity', '>', 0)
-            ->decrement('quantity', 1);
-
-        $productInfor = DB::table('Products')->where('id', $data['id'])->first();
-        return $productInfor;
+        $products = DB::table('products')->insertGetId([
+            'name_product' => $data['nameProduct'],
+            'price' => $data['priceProduct'],
+            'quantity' => $data['quantityProduct'],
+            'image' => $data['imageProduct'],
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        return $products;
     }
 }

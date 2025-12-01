@@ -24,7 +24,7 @@ $("#id-form-login").on("submit", function (e) {
         },
         success: function (res) {
             localStorage.setItem("token", res.token);
-            window.location.href = "/user-view";
+            window.location.href = "/admin";
         },
         error: function (error) {
             let errors = error.responseJSON.errors;

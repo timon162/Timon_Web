@@ -22,23 +22,23 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required',
-            'name' => 'required|string',
-            'price' => 'required|numeric',
-            'quantity' => 'required|numeric'
+            'imageProduct' => 'required',
+            'nameProduct' => 'required|string',
+            'priceProduct' => 'required|numeric',
+            'quantityProduct' => 'required|integer'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'id.required' => 'id required',
-            'name.required'    => 'name required',
-            'name.string'    => 'name string',
-            'price.required'    => 'price required',
-            'price.numeric'    => 'price numeric',
-            'quantity.required'    => 'quantity required',
-            'quantity.numeric'    => 'quantity numeric',
+            'imageProduct.required' => 'image required',
+            'nameProduct.required'    => 'name required',
+            'nameProduct.string'    => 'name string',
+            'priceProduct.required'    => 'price required',
+            'priceProduct.numeric'    => 'price numeric',
+            'quantityProduct.required'    => 'quantity required',
+            'quantityProduct.integer'    => 'quantity numeric',
         ];
     }
 }

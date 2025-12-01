@@ -14,7 +14,7 @@ $.ajax({
         if (res.mess == "undefined") {
             window.location.href = "/login";
         } else {
-            window.location.href = "/user-view";
+            window.location.href = "/user";
         }
     },
 });

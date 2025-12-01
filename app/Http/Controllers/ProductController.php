@@ -6,20 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Services\Interfaces\ProductInterfaceService;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\AddProductRequest;
 
 class ProductController extends Controller
 {
-    public function __construct(protected ProductInterfaceService $productService) {}
 
-    public function viewUser()
-    {
-        $data = $this->productService->getProduct();
-        return view('user.user_view', ['data' => $data]);
-    }
+    public function __construct(protected ProductInterfaceService $productSevice) {}
 
     public function postProduct(ProductRequest $request): JsonResponse
     {
-        $data = $this->productService->postProduct($request->validated());
+        $data = $this->productSevice->postProduct($request->validated());
         return response()->json($data);
     }
 }

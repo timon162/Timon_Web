@@ -26,11 +26,6 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function viewUser()
-    {
-        return view('user.user_view');
-    }
-
     public function viewComponent()
     {
         return view('component');
