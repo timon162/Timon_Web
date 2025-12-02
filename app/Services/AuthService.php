@@ -42,7 +42,7 @@ class AuthService implements AuthInterfaceService
 
         $user = Auth::user();
         session(['user' => $user]);
-        $token = $user->createToken('token')->plainTextToken;
+        $token = bin2hex(random_bytes(32));
         $addToken = [
             'email' => $data['email'],
             'token' => $token,
@@ -81,5 +81,6 @@ class AuthService implements AuthInterfaceService
     public function logout(array $data)
     {
         $this->authRepository->logout($data);
+        Auth::logout();
     }
 }

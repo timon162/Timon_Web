@@ -5,7 +5,6 @@ $postToken = {
 
 $("#id-Logout-btn").on("click", function (e) {
     e.preventDefault();
-
     $.ajax({
         type: "POST",
         url: "/post-logout",
@@ -15,7 +14,11 @@ $("#id-Logout-btn").on("click", function (e) {
         },
         success: function () {
             localStorage.removeItem("token");
-            window.location.href = "/login";
+            window.location.href = "/";
+        },
+        error: function (error) {
+            let errors = error.responseJSON.errors;
+            console.log(errors);
         },
     });
 });

@@ -39,5 +39,6 @@
             <h6 class="text-white mb-0">{{ $user['name'] }}</h6>
             <small class="text-white">{{ $user['rolse'] }}</small>
         </div>
+        <button id="id-Logout-btn">Logout</button>
     </div>
 </div>
