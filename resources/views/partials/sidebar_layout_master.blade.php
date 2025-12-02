@@ -31,14 +31,17 @@
     </a>
 </div>
 
-<div class="profile-section mt-auto p-2">
+<div class="profile-section mt-auto p-2 d-flex">
     <div class="d-flex align-items-center">
-        <img src="https://randomuser.me/api/portraits/women/70.jpg" style="height:60px" class="rounded-circle"
-            alt="Profile">
+        <img src="https://scontent.fvca1-2.fna.fbcdn.net/v/t39.30808-1/335021336_224267506837577_4734492825034716372_n.jpg?stp=cp0_dst-jpg_s40x40_tt6&_nc_cat=104&ccb=1-7&_nc_sid=28885b&_nc_ohc=scnbMYFPFLwQ7kNvwGEWSUY&_nc_oc=AdkhkduxiZGjU7xoxJmSglU2K5xF1BWlCdNR3Cx1OwmHMB8ZqITNG_A2YoS7K7CdfI4&_nc_zt=24&_nc_ht=scontent.fvca1-2.fna&_nc_gid=clIBduV2XCctgY-ggCtvpA&oh=00_AfhQmYGY0q869gMdqZTmQCIL1nxWBmE-yEpykWbawVfifA&oe=69318ADE"
+            style="height:60px" class="rounded-circle" alt="Profile">
         <div class="ms-3 profile-info">
             <h6 class="text-white mb-0">{{ $user['name'] }}</h6>
             <small class="text-white">{{ $user['rolse'] }}</small>
         </div>
+    </div>
+    <div class="logout-zone">
         <button id="id-Logout-btn">Logout</button>
     </div>
+
 </div>

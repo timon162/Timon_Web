@@ -14,7 +14,6 @@ Route::post('/post-register', [AuthController::class, 'postRegister']);
 Route::post('/post-login', [AuthController::class, 'postLogin']);
 Route::post('/post-logout', [AuthController::class, 'postLogout']);
 
-
 Route::prefix('/user')->middleware('checkAuth')->group(function () {
     Route::get('/', [UserController::class, 'userView'])->name('user');
 });

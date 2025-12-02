@@ -21,7 +21,8 @@ body {
 .sidebar-link {
     color: #a0a3bd;
     transition: all 0.2s ease;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     margin: 4px 16px;
     white-space: nowrap;
     overflow: hidden;
@@ -34,6 +35,7 @@ body {
 }
 
 .sidebar-link.active {
+    width: 100%;
     color: #ffffff;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -54,6 +56,18 @@ body {
 
 .profile-section {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: space-between;
+}
+
+.logout-zone {
+    height: 100%;
+    width: auto;
+    align-content: center;
+}
+
+#id-Logout-btn {
+    height: 50%;
+    align-items: center;
 }
 
 .main-content {
@@ -98,7 +112,10 @@ body {
 
 .collapsed .profile-info {
     display: none;
-    opacity: 0;
+}
+
+.collapsed .logout-zone {
+    display: none;
 }
 
 .collapsed .palign-items-center {
@@ -107,6 +124,7 @@ body {
 }
 
 .collapsed .sidebar-link {
+    width: 90%;
     text-align: center;
     padding: 1rem !important;
     margin: 4px 8px;
