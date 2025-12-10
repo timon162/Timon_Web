@@ -19,6 +19,15 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Interfaces\AuthInterfaceRepository::class,
             \App\Repositories\AuthRepository::class,
         );
+
+        $this->app->singleton(
+            \App\Services\Interfaces\ProductInterfaceService::class,
+            \App\Services\ProductService::class,
+        );
+        $this->app->singleton(
+            \App\Repositories\Interfaces\ProductInterfaceRepository::class,
+            \App\Repositories\ProductRepository::class,
+        );
     }
 
     /**

@@ -41,7 +41,8 @@ class AuthService implements AuthInterfaceService
         }
 
         $user = Auth::user();
-        $token = $user->createToken('token')->plainTextToken;
+        session(['user' => $user]);
+        $token = bin2hex(random_bytes(32));
         $addToken = [
             'email' => $data['email'],
             'token' => $token,
@@ -60,7 +61,7 @@ class AuthService implements AuthInterfaceService
     {
         if ($data['remember_token'] != null) {
             $user = $this->authRepository->rememberMe($data);
-            if (!$user) {
+            if ($user === null) {
                 return [
                     'data' => null,
                     'mess' => 'undefined'
@@ -80,5 +81,6 @@ class AuthService implements AuthInterfaceService
     public function logout(array $data)
     {
         $this->authRepository->logout($data);
+        Auth::logout();
     }
 }
