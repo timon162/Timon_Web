@@ -3,7 +3,7 @@
 </button>
 
 <div class="p-4">
-    <h4 class="logo-text fw-bold mb-0">NexusFlow</h4>
+    <h4 class="logo-text fw-bold mb-0">Timon Web</h4>
     <p class="text-muted small hide-on-collapse">Dashboard</p>
 </div>
 

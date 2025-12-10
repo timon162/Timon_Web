@@ -17,7 +17,7 @@ Route::post('/post-logout', [AuthController::class, 'postLogout']);
 
 Route::prefix('/user')->middleware('checkAuth')->group(function () {
     Route::get('/', [UserController::class, 'userView'])->name('user');
-    Route::get('/detail-product/{id}', [ProductController::class, 'viewDetailProduct']);
+    Route::get('/detail-product/{id}', [ProductController::class, 'viewDetailProduct'])->name('user-product.detail');
 });
 
 Route::prefix('/admin')->middleware('admin')->group(function () {
@@ -33,7 +33,5 @@ Route::post('/post-product', [AdminProductController::class, 'postProduct']);
 Route::post('/create-product', [AdminProductController::class, 'createNewProduct']);
 
 Route::post('/post-limit-product', [AdminProductController::class, 'postLimitProduct']);
-
-
 
 Route::post('/detail-product', [ProductController::class, 'viewDetailProduct']);

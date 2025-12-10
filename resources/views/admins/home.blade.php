@@ -42,27 +42,6 @@
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
                 </div>
             @endforeach
-            <form class="wrap-add-product" action="" method="">
-                <div class="add-product">
-                    <div class="add-product-card bg-white rounded-4 shadow-sm h-100 ">
-
-                        <div class="add-product-image overflow-hidden">
-                            <input type="text" id="add-image" placeholder="url hình sản phẩm">
-                        </div>
-                        <div class="add-product-infor p-4">
-                            <input id="add-name-product" placeholder="nhập tên sản phẩm"></input>
-
-                            <input id="add-quantity-product" placeholder="nhập số lượng sản phẩm"></input>
-
-                            <input id="add-price-product" placeholder="nhập giá sản phẩm"></input>
-
-                            <button class="btn add-btn-custom text-white px-4 py-2 ">
-                                create product
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 @endsection

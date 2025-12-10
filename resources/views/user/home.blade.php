@@ -7,7 +7,7 @@
             @foreach ($dataProduct as $item)
                 <div class="product">
                     <div class="product-card bg-white rounded-4 shadow-sm h-100 position-relative"
-                        onclick="window.location='{{ route('product.detail', ['id' => $item->id]) }}'"
+                        onclick="window.location='{{ route('user-product.detail', ['id' => $item->id]) }}'"
                         style="cursor: pointer;">
                         <div class="overflow-hidden">
                             <img id="img-product" src="{{ $item->image }}" class="product-image w-100" alt="Product">
