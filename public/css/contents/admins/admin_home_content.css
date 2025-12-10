@@ -2,12 +2,6 @@
     height: auto;
     width: 100%;
     display: flex;
-}
-
-.container-product {
-    height: auto;
-    width: 100%;
-    display: flex;
     justify-content: center;
 }
 
@@ -61,6 +55,10 @@
     background: linear-gradient(45deg, #6366f1, #8b5cf6);
     border: none;
     transition: all 0.3s ease;
+}
+
+.change-product {
+    gap: 10px;
 }
 
 .btn-custom:hover {

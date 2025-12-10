@@ -73,8 +73,8 @@
                                 id="id-register-btn">Register</button>
 
                             <div class="register-link">
-                                You have an account? <a href="{{ route('AuthController.viewLogin') }}"
-                                    class="text-decoration-none">Come To Login</a>
+                                You have an account? <a href="{{ route('login') }}" class="text-decoration-none">Come To
+                                    Login</a>
                             </div>
                         </form>
                     </div>

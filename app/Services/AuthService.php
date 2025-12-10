@@ -61,7 +61,7 @@ class AuthService implements AuthInterfaceService
     {
         if ($data['remember_token'] != null) {
             $user = $this->authRepository->rememberMe($data);
-            if (!$user) {
+            if ($user === null) {
                 return [
                     'data' => null,
                     'mess' => 'undefined'

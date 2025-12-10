@@ -1,5 +1,4 @@
 $(".wrap-add-product").on("submit", function (e) {
-    e.preventDefault();
     var imageProduct = $("#add-image").val();
     var nameProduct = $("#add-name-product").val();
     var quantityProduct = $("#add-quantity-product").val();

@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -47,5 +48,9 @@
 <script src="{{ asset('js/auth/logout.js') }}"></script>
 <script src="{{ asset('js/contents/home.js') }}"></script>
 <script src="{{ asset('js/contents/admins/admin_home.js') }}"></script>
+<script src="{{ asset('js/contents/users/user_home.js') }}"></script>
+
+<script src="{{ asset('js/contents/admins/admin_products/admin_create_product.js') }}"></script>
+<script src="{{ asset('js/contents/admins/admin_products/admin_imformation_product.js') }}"></script>
 
 </html>
